@@ -2,7 +2,7 @@
 
 ## 关于xbear
 
-* xbear继承fis，作为xstack（https://github.com/dbxiao/xstack） 全栈开发框架默认编译和发布工具。
+* xbear继承fis，作为xstack（https://github.com/dbxiao/xstack ）全栈开发框架默认编译和发布工具。
 * xbear支持less、时间戳、md5。
 * xbear完全开源，你可以免费使用xbear作为自己项目的编译和开发工具。
 
@@ -21,3 +21,7 @@
 * 普通编译：xbear release -d local
 * 监控编译：xbear release -wd local
 * 打包编译：xbear release -wopd local
+
+## xbear wiki
+
+		更多详情请见wiki:https://github.com/dbxiao/xbear/wiki
