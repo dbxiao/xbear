@@ -1,28 +1,32 @@
 {
-  "name": "xbear",
-  "version": "1.0.1",
-  "description": "a node web develop plugin. support web developer to compile and publish ",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/dbxiao/xbear.git"
-  },
-  "keywords": [
-    "node",
-    "compile",
-    "publish"
-  ],
-  "author": "dbxiao",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dbxiao/xbear/issues"
-  },
-  "homepage": "https://github.com/dbxiao/xbear",
-  "dependencies": {
-    "fis": "^1.9.33",
-    "fis-parser-less": "^0.1.3"
-  }
+    "name": "xbear",
+    "version": "1.0.4",
+    "description": "web develop integrate solution",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "bin": {
+        "xbear": "bin/index"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/dbxiao/xbear.git"
+    },
+    "keywords": [
+        ""
+    ],
+    "author": "dbxiao",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/dbxiao/xbear/issues"
+    },
+    "homepage": "https://github.com/dbxiao/xbear",
+    "dependencies": {
+        "fis": "1.9.33",
+        "fis-parser-less": "0.1.1",
+        "ppear-command-migrate": "*",
+        "ppear-command-local": "*",
+        "ppear-deploy-plugin": "*"
+    }
 }
