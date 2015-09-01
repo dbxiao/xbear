@@ -22,8 +22,8 @@ module.exports = {
             'png-compressor' : {
                 type : 'pngquant',
                 speed : 2,
-                quality : [70, 80],
-                iebug : false //无需兼容ie6
+                quality : [80, 90],
+                iebug : false
             },
             "uglify-js" : { 
                 mangle: {
@@ -41,18 +41,18 @@ module.exports = {
                 release : '/view/${product}/${namespace}/$1/$2',
                 id : '$1/$2'
             },
-            /*** 静态文件编译规则（将所有静态文件发布到static目录）*/
+            /*** 静态文件编译规则（将所有静态文件发布到res目录）*/
             {
                 reg : /^\/(page|layout|widget|static)\/(.*\.(js|css|jpg|png|gif|tpl))$/i,
                 isMod : true,
-                release : '/static/${product}/${namespace}/$1/$2',
+                release : '/res/${product}/${namespace}/$1/$2',
                 id : '$1/$2',
                 query : "?t="+time
             },
-            /*** 其它所有静态文件规则（将合并代码打包到static目录）*/
+            /*** 其它所有静态文件规则（将合并代码打包到res目录）*/
             {
                 reg: /^.+$/,
-                release: '/static/${product}/${namespace}$&',
+                release: '/res/${product}/${namespace}$&',
                 query : "?t="+time
             }
         ]

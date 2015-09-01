@@ -1,25 +1,25 @@
 /**
  * @author [dbxiao]
- * @data   [2015-08]
+ * @date   [2015-08]
  */
 
 var fis = module.exports = require("fis");
 
-fis.require.prefixes = ['xbear', 'fis'];
-fis.cli.name = 'xbear';
-fis.cli.info = fis.util.readJSON(__dirname + '/package.json');
+fis.cli.name          = 'xbear';
+fis.require.prefixes  = ['xbear', 'fis'];
 fis.cli.help.commands = ['release', 'server'];
+fis.cli.info          = fis.util.readJSON(__dirname + '/package.json');
 
 fis.cli.version = function() {
     var content = [
         '',
         'v' + fis.cli.info.version,
         '',
-        '////////////////////////////////'.bold.red,
-        '//////        xbear       //////'.bold.yellow,
-        '//////   power by dbxiao  //////'.bold.green,
-        '//////      thanks fis    //////'.bold.blue,
-        '////////////////////////////////',
+        '////////////////////////////////////'.bold.red,
+        '//////          xbear         //////'.bold.yellow,
+        '//////     Build by dbxiao    //////'.bold.green,
+        '//////  [dbxiao@foxmail.com]  //////'.bold.yellow,
+        '////////////////////////////////////'.bold.red,
         ''
     ].join('\n');
     console.log(content);
