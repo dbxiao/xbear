@@ -27,7 +27,7 @@
 	更多详情请见wiki:https://github.com/dbxiao/xbear/wiki
 
 
-## 功能日志
+## 功能日志(2015-09-01)
 
 	1、优化编译目录规则，适应移动端开发，模板文件发布到view目录，静态文件发布到res目录
 	2、支持xstack框架和xphone框架。

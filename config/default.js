@@ -1,3 +1,7 @@
+/**
+ * xbear配置文件，请勿修改，路由问题，请联系：dbxiao@foxmail.com
+ */
+
 var now = new Date();
 var time = [now.getFullYear(), now.getMonth()+1, now.getDate(), now.getHours() , now.getMinutes(), now.getSeconds()].join("");
 
