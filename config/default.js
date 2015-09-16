@@ -26,7 +26,7 @@ module.exports = {
             'png-compressor' : {
                 type : 'pngquant',
                 speed : 2,
-                quality : [80, 90],
+                quality : [80, 100],
                 iebug : false
             },
             "uglify-js" : { 

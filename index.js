@@ -15,11 +15,12 @@ fis.cli.version = function() {
         '',
         'v' + fis.cli.info.version,
         '',
-        '////////////////////////////////////'.bold.red,
-        '//////          xbear         //////'.bold.yellow,
-        '//////     Build by dbxiao    //////'.bold.green,
-        '//////  [dbxiao@foxmail.com]  //////'.bold.yellow,
-        '////////////////////////////////////'.bold.red,
+        '////////////////////////////////////////////'.bold.red,
+        '/////              xBear               /////'.bold.yellow,
+        '/////         全栈代码管理工具         /////'.bold.green,
+        '/////       [dbxiao@foxmail.com]       /////'.bold.yellow,
+        '/////  Git : develop.xpluse.com/xbear  /////'.bold.red,
+        '////////////////////////////////////////////'.bold.write,
         ''
     ].join('\n');
     console.log(content);

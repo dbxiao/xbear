@@ -1,6 +1,6 @@
 {
     "name": "xbear",
-    "version": "1.0.12",
+    "version": "1.0.13",
     "description": "web develop integrate solution",
     "main": "index.js",
     "scripts": {
