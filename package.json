@@ -1,6 +1,6 @@
 {
     "name": "xbear",
-    "version": "1.0.16",
+    "version": "1.0.17",
     "description": "web full stack development and management tool",
     "main": "index.js",
     "scripts": {
@@ -24,9 +24,6 @@
     "homepage": "https://github.com/dbxiao/xbear",
     "dependencies": {
         "fis": "1.9.10",
-        "fis-parser-less": "0.1.1",
-        "ppear-command-migrate": "*",
-        "ppear-command-local": "*",
-        "ppear-deploy-plugin": "*"
+        "fis-parser-less": "0.1.1"
     }
 }

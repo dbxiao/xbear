@@ -6,7 +6,7 @@
 * xbear支持模板文件和静态文件编译、打包、发布，默认支持less转css、静态文件时间戳。
 * xbear完全开源，你可以免费使用xBear作为自己项目的编译和开发工具。
 
-## xbear思想
+## xBear思想
 
 * 在所有项目工程中，都包括通用项目（common）和业务项目（business）。
 * web开发由模板文件（html）和静态文件（js、css、images、video）组成。
@@ -18,7 +18,7 @@
 * 安装：npm install -g xbear
 * 版本：xbear -v
 
-## xbear常用命令
+## xBear常用命令
 
 * 普通编译：xbear release -d local
 * 监控编译：xbear release -wd local
