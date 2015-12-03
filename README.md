@@ -31,8 +31,13 @@
 	更多详情请见wiki:https://github.com/dbxiao/xbear/wiki
 
 
-## 功能日志(2015-09-01)
+## 更新日志(2015-12-13)
 
-	1、优化编译目录规则，适应移动端开发，模板文件发布到view目录，静态文件发布到res目录
-	2、支持xStack框架和xCord框架。
+	[xbear-1.0.19](2015-12-13)
+	1、新增widget、layout import引入标签；开发者直接使用widget，layout标签，eg:<widget rel="import" href="home:widget/home/home.html"；
+	2、新增跨模块引用方法，eg：在home模块中引入common模块widget，<widget rel="import" href="common:widget/home/home.html" >。
+
+	[xbear-1.0.17](2015-09-03)
+	1、优化编译目录规则，适应移动端开发，模板文件发布到view目录，静态文件发布到res目录;
+	2、支持xStack框架和xCord框架;
 	3、全面支持web全栈开发和移动端hybrid开发：http://develop.xpluse.com/xcord。
