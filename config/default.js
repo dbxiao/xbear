@@ -45,13 +45,29 @@ module.exports = {
                 release : '/view/${product}/${namespace}/$1/$2',
                 id : '$1/$2'
             },
-            /*** 静态文件编译规则（将所有静态文件发布到res目录）*/
+            /*** 静态文件编译规则（将page、layout、widget静态文件发布到res目录）*/
             {
-                reg : /^\/(page|layout|widget|static)\/(.*\.(js|css|jpg|png|gif|tpl))$/i,
+                reg : /^\/(page|layout|widget)\/(.*\.(js|css))$/i,
                 isMod : true,
                 release : '/res/${product}/${namespace}/$1/$2',
                 id : '$1/$2',
                 query : "?t="+time
+            },
+            /** page和widget doc目录下的ue设计图、mrd不需要编译产出 */
+            {
+                reg : /^\/(page|widget)\/.*\/doc\/[^\.]*\.(psd|png|jpg|doc|md)/i,
+                release : false
+            },
+            /** 匹配static下的所有资源 */
+            {
+                reg : /^\/static\/(.*\/ls-conf\.js)$/i,
+                release : '/static/${product}/${namespace}/$1',
+                isLSLib : true,
+                query : "?t="+time
+            },
+            {
+                reg : /^\/static\/(.*)$/i,
+                release : '/static/${product}/${namespace}/$1'
             },
             /*** 其它所有静态文件规则（将合并代码打包到res目录）*/
             {
