@@ -33,11 +33,14 @@
 
 ## 更新日志(2015-12-14)
 
-	[xbear-1.0.20](2015-12-14)【测试版】
+	[xbear-1.0.20](2015-12-07)【测试版】
+	1、优化common模块编译和发布规则。
+
+	[xbear-1.0.20](2015-12-04)【测试版】
 	1、修复layout标签闭合bug。
 	2、common模块编译取消mod加载。
 
-	[xbear-1.0.19](2015-12-13) 【测试版】
+	[xbear-1.0.19](2015-12-03) 【测试版】
 	1、新增widget、layout import引入标签；开发者直接使用widget，layout标签，eg:<widget rel="import" href="home:widget/home/home.html"；
 	2、新增跨模块引用方法，eg：在home模块中引入common模块widget，<widget rel="import" href="common:widget/home/home.html" >。
 
