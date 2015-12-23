@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-// vi xbear/bin/xbear.js
 
 var Liftoff= require('liftoff');
 var argv   = require('minimist')(process.argv.slice(2));
@@ -27,5 +26,6 @@ cli.launch({
 	}
 	fis.set('system.localNPMFolder',  path.join(env.cwd, 'node_modules/xbear'));
 	fis.set('system.globalNPMFolder', path.dirname(__dirname));
+	fis.cli.name = this.name;
 	fis.cli.run(argv, env);
 });

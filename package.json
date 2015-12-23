@@ -1,20 +1,18 @@
 {
     "name"    : "xbear",
-    "version" : "1.1.1",
+    "version" : "1.1.2",
     "author"  : "dbxiao",
     "license" : "ISC",
     "main"    : "index.js",
     "homepage": "https://github.com/dbxiao/xbear",
+    "keywords"   : ["web develop, stack develop, hybrid develop"],
     "description": "web full stack development and management tool",
     "bin" : {
-        "xbear" : "xbear.js"
+        "xbear" : "bin/xbear.js"
     },
     "scripts" : {
         "test" : "echo \"Error: no test specified\" && exit 1"
     },
-    "keywords" : [
-        "web develop, stack develop, hybrid develop"
-    ],
     "repository" : {
         "type" : "git",
         "url"  : "https://github.com/dbxiao/xbear.git"
