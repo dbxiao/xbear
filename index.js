@@ -1,9 +1,13 @@
 //vi xbear/index.js
 var fis = module.exports =  require('fis3');
+var time = null;
 
 fis.require.prefixes.unshift('xbear');
 fis.cli.name = 'xbear';
 fis.cli.info = require('./package.json');
+
+fis.set('date', new Date);
+time = [fis.get('date').getYear()+1900, fis.get('date').getMonth()+1, fis.get('date').getDate(), fis.get('date').getMinutes()].join("");
 
 fis.cli.version = function() {
     var v = fis.cli.info.version;
@@ -40,6 +44,16 @@ fis.match('image', {
   useHash: false
 });
 
+//静态文件时间戳
+fis.match('*.{js,css,less}', {
+    query: '?t='+time
+});
+
+//图片文件时间戳
+fis.match('image', {
+    query: '?t='+time
+});
+
 // fis-parser-less
 fis.match('*.less', {
   parser: fis.plugin('less'),
@@ -58,7 +72,7 @@ fis.match('*.png', {
   optimizer: fis.plugin('png-compressor')
 });
 
-fis.match('widget/*.{php,js,css}', {
+fis.match('widget/*.{html, tpl, js, css}', {
   isMod: true
 });
 
