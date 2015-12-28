@@ -5,6 +5,23 @@ fis.require.prefixes.unshift('xbear');
 fis.cli.name = 'xbear';
 fis.cli.info = require('./package.json');
 
+fis.cli.version = function() {
+    var v = fis.cli.info.version;
+    var content = [
+        '',
+        'v' + v,
+        '',
+        '////////////////////////////////////////////'.bold.red,
+        '/////              xBear               /////'.bold.yellow,
+        '/////              '+v+'               /////',
+        '/////         全栈代码管理工具         /////'.bold.green,
+        '///// http://develop.xpluse.com/xbear  /////'.bold.red,
+        '////////////////////////////////////////////'.bold.blue,
+        ''
+    ].join('\n');
+    console.log(content);
+};
+
 fis.match('*', {
   release: '/res/$0' // 所有资源发布时产出到 /static 目录下
 });
@@ -15,12 +32,12 @@ fis.match('*.html', {
 
 // 所有js, css 加 hash
 fis.match('*.{js,css,less}', {
-  useHash: true
+  useHash: false
 });
 
 // 所有图片加 hash
 fis.match('image', {
-  useHash: true
+  useHash: false
 });
 
 // fis-parser-less
