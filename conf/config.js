@@ -1,3 +1,10 @@
+/**
+ * [fis description]
+ * @author [dbxiao]
+ * @date   [2016-01]
+ * @desc   [xbear ^1.10.X 开始支持FIS3、node4.X和node 5.X
+ *          xbear 作为xstack和xcord项目文件管理工具]
+ */
 var fis = require("fis3");
 var time = null;
 
@@ -24,7 +31,7 @@ function setConfigData(product, namespace){
         release: '/view/'+product+'/'+namespace+'/$0'
     });
 
-    //静态文件时间戳
+    // 静态文件时间戳
     fis.match('*.{js,css,less}', {
         query: '?t=' + time
     });
@@ -40,23 +47,37 @@ function setConfigData(product, namespace){
         rExt: '.css'
     });
 
+    // JS规范
     fis.match('*.js', {
         optimizer: fis.plugin('uglify-js')
     });
 
+    // LESS转CSS
     fis.match('*.{css,less}', {
         optimizer: fis.plugin('clean-css')
     });
 
+    // PNG压缩规则
     fis.match('*.png', {
         optimizer: fis.plugin('png-compressor')
     });
 
+    // CSS打包规则
     fis.match('::package', {
         spriter: fis.plugin('csssprites')
     });
 
-    //fis3-hook-module
+    // CSS合并规则
+    fis.match('*.css', {
+        packTo: '/pkg/pak-'+fis.get("namespace")+'.css'
+    });
+
+    // JS合并规则
+    fis.match('*.js', {
+        packTo: '/pkg/pak-'+fis.get("namespace")+'.js'
+    });
+
+    // fis3-hook-module
     fis.hook('module', {
         mode: 'amd' // 模块化支持 amd 规范，适应 require.js
     });
@@ -71,7 +92,8 @@ function setConfigData(product, namespace){
     /**             media pack ::: xbear release pack              **/
     /****************************************************************/
 
-    // 打包策略 [http://npm.taobao.org/package/fis3-postpackager-loader]
+    // 多文件打包策略 
+    // http://npm.taobao.org/package/fis3-postpackager-loader]
     fis.media('pack')
        .match('::packager', { 
         postpackager: fis.plugin('loader', {
@@ -79,7 +101,7 @@ function setConfigData(product, namespace){
         })
     });
 
-    // 打包规则
+    // JS打包规则
     fis.media('pack')
        .match('*.js', {
             optimizer: fis.plugin('uglify-js', {
