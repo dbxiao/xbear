@@ -3,6 +3,9 @@ var time = null;
 
 function setConfigData(product, namespace){
     fis.set('date', new Date);
+    fis.set("product", product);
+    fis.set("namespace", namespace);
+
     time = [fis.get('date').getYear()+1900,
         fis.get('date').getMonth()+1,
         fis.get('date').getDate(),
@@ -61,7 +64,12 @@ function setConfigData(product, namespace){
     fis.match('::package', {
         spriter: fis.plugin('csssprites')
     });
-    
+
+    //fis3-hook-module
+    fis.hook('module', {
+        mode: 'amd' // 模块化支持 amd 规范，适应 require.js
+    });
+
     // 打包策略 [http://npm.taobao.org/package/fis3-postpackager-loader]
     fis.match('::packager', { 
         postpackager: fis.plugin('loader', {

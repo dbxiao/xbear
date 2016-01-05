@@ -1,6 +1,7 @@
 //vi xbear/index.js
 var fis  = module.exports = require('fis3');
 fis.deploy = require('./lib/deploy_plugin.js');
+fis.compile = require('./lib/compile.js');
 
 fis.require.prefixes.unshift('xbear');
 fis.cli.name = 'xbear';
