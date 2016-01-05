@@ -14,11 +14,6 @@ function setConfigData(product, namespace){
         fis.get('date').getSeconds()
     ].join("");
 
-    //fis3-hook-module
-    fis.hook('module', {
-        mode: 'amd' // 模块化支持 amd 规范，适应 require.js
-    });
-
     // 文件发布到res目录
     fis.match('*', {
         release: '/res/'+product+'/'+namespace+'/$0'
@@ -57,10 +52,6 @@ function setConfigData(product, namespace){
         optimizer: fis.plugin('png-compressor')
     });
 
-    fis.match('widget/*.{html, tpl, js, css}', {
-        isMod: true
-    });
-
     fis.match('::package', {
         spriter: fis.plugin('csssprites')
     });
@@ -70,10 +61,36 @@ function setConfigData(product, namespace){
         mode: 'amd' // 模块化支持 amd 规范，适应 require.js
     });
 
+    // widget源码目录下的资源被标注为组件
+    fis.match('/widget/**/*', {
+        isMod: true
+    });
+
+
+    /****************************************************************/
+    /**             media pack ::: xbear release pack              **/
+    /****************************************************************/
+
     // 打包策略 [http://npm.taobao.org/package/fis3-postpackager-loader]
-    fis.match('::packager', { 
+    fis.media('pack')
+       .match('::packager', { 
         postpackager: fis.plugin('loader', {
             allInOne: true
+        })
+    });
+
+    // 打包规则
+    fis.media('pack')
+       .match('*.js', {
+            optimizer: fis.plugin('uglify-js', {
+                mangle: {
+                    expect: ['require', 'define', 'module'] //不想被压的
+                }
+            })
+        })
+        .match('*.css', {
+            optimizer: fis.plugin('clean-css', {
+                'keepBreaks': true //保持一个规则一个换行
         })
     });
 };
