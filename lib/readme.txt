@@ -1,1 +1,1 @@
-deploy_plugin.js  //±àÒë²å¼ş
+deploy_plugin.js  // ç¼–è¯‘æ’ä»¶

@@ -20,10 +20,10 @@
 
 ## xBear常用命令
 
-* 普通编译：xbear release -d local
-* 监控编译：xbear release -wd local
-* 打包编译：xbear release -wopd local
-* cordova编译：xbear release -wopd cordova
+* 普通编译：xbear release -d
+* 监控编译：xbear release -wd 
+* 打包编译：xbear release -wcd
+* cordova编译：xbear release -wcd cordova
 
 
 ## xBear wiki
@@ -32,8 +32,13 @@
 
 
 ## 更新日志(2015-12-14)
-	[xbear-1.1.10](2015-12-23)
-	1、从1.1.10版本后，xbear支持fis3，不在支持fis2。
+	[xbear-1.1.7](2015-12-23)
+	2、增加fis3 namespace和product全局变量，增加<widget 和<layout 标签
+	3、从1.1.0版本后，xbear支持fis3，不在支持fis2。
+	4、xbear 1.0.x不支持fis3，支持fis2。
+
+	[xbear-1.1.5](2015-12-23)
+	1、从1.1.0版本后，xbear支持fis3，不在支持fis2。
 	2、xbear 1.0.x不支持fis3，支持fis2。
 
 	[xbear-1.0.20](2015-12-07)【测试版】

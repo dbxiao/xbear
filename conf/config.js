@@ -11,10 +11,17 @@ function setConfigData(product, namespace){
         fis.get('date').getSeconds()
     ].join("");
 
+    //fis3-hook-module
+    fis.hook('module', {
+        mode: 'amd' // 模块化支持 amd 规范，适应 require.js
+    });
+
+    // 文件发布到res目录
     fis.match('*', {
         release: '/res/'+product+'/'+namespace+'/$0'
     });
 
+    // 模板文件发布到view目录
     fis.match('*.html', {
         release: '/view/'+product+'/'+namespace+'/$0'
     });
@@ -54,10 +61,12 @@ function setConfigData(product, namespace){
     fis.match('::package', {
         spriter: fis.plugin('csssprites')
     });
-
-    //fis3-hook-module
-    fis.hook('module', {
-        mode: 'amd' // 模块化支持 amd 规范，适应 require.js
+    
+    // 打包策略 [http://npm.taobao.org/package/fis3-postpackager-loader]
+    fis.match('::packager', { 
+        postpackager: fis.plugin('loader', {
+            allInOne: true
+        })
     });
 };
 
