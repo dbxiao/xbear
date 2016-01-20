@@ -1,30 +1,28 @@
 
 {
-    "name": "xbear",
-    "version": "1.0.22",
+    "name"    : "xbear",
+    "version" : "1.0.23",
+    "author"  : "dbxiao",
+    "license" : "ISC",
+    "main"    : "index.js",
+    "homepage": "https://github.com/dbxiao/xbear",
+    "keywords"   : ["web develop, stack develop, hybrid develop"],
     "description": "web full stack development and management tool",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+    "bin" : {
+        "xbear" : "bin/xbear.js"
     },
-    "bin": {
-        "xbear": "bin/index"
+    "scripts" : {
+        "test" : "echo \"Error: no test specified\" && exit 1"
     },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/dbxiao/xbear.git"
+    "repository" : {
+        "type" : "git",
+        "url"  : "https://github.com/dbxiao/xbear.git"
     },
-    "keywords": [
-        "web develop, stack develop, hybrid develop"
-    ],
-    "author": "dbxiao",
-    "license": "ISC",
-    "bugs": {
+    "bugs" : {
         "url": "https://github.com/dbxiao/xbear/issues"
     },
-    "homepage": "https://github.com/dbxiao/xbear",
     "dependencies": {
         "fis": "1.9.20",
-        "fis-parser-less": "0.1.1"
+        "fis-parser-less": "0.1.3"
     }
 }

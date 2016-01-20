@@ -20,10 +20,10 @@
 
 ## xBear常用命令
 
-* 普通编译：xbear release -d local
-* 监控编译：xbear release -wd local
-* 打包编译：xbear release -wopd local
-* cordova编译：xbear release -wopd cordova
+* 普通编译：xbear release -d
+* 监控编译：xbear release -wd 
+* 打包编译：xbear release -wcd
+* cordova编译：xbear release -wcd cordova
 
 
 ## xBear wiki
@@ -31,7 +31,9 @@
 	更多详情请见wiki:https://github.com/dbxiao/xbear/wiki
 
 
-## 更新日志(2015-12-14)
+## 更新日志
+	[xbear-1.0.23](2016-01-20)
+	1、增加namespace和product全局变量，增加<widget 和<layout 标签
 
 	[xbear-1.0.20](2015-12-07)【测试版】
 	1、优化common模块编译和发布规则。
