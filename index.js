@@ -1,26 +1,31 @@
-//vi xbear/index.js
-var fis  = module.exports = require('fis3');
-fis.deploy = require('./lib/deploy_plugin.js');
-fis.compile = require('./lib/compile.js');
+/**
+ * @author [dbxiao]
+ * @date   [2015-08]
+ */
 
-fis.require.prefixes.unshift('xbear');
-fis.cli.name = 'xbear';
-fis.cli.info = require('./package.json');
+var fis = module.exports = require("fis");
 
+fis.cli.name          = 'xbear';
+fis.require.prefixes  = ['xbear', 'fis'];
+fis.cli.help.commands = ['release', 'server'];
+fis.cli.info          = fis.util.readJSON(__dirname + '/package.json');
 
 fis.cli.version = function() {
-    var v = fis.cli.info.version;
     var content = [
         '',
-        'v' + v,
+        'v' + fis.cli.info.version,
         '',
         '////////////////////////////////////////////'.bold.red,
         '/////              xBear               /////'.bold.yellow,
-        '/////              '+v+'               /////',
         '/////         全栈代码管理工具         /////'.bold.green,
+        '/////       [dbxiao@foxmail.com]       /////'.bold.yellow,
         '///// http://develop.xpluse.com/xbear  /////'.bold.red,
         '////////////////////////////////////////////'.bold.blue,
         ''
     ].join('\n');
     console.log(content);
 };
+
+var defaultConfig = require('./config/default.js');
+
+fis.config.merge(defaultConfig);

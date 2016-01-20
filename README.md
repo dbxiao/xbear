@@ -1,5 +1,9 @@
 # xBear
 
+## 致歉：
+
+* 在2016年1月初，xbear发布1.1.*版本，依赖fis由fis2直接升级到fis3，导致部分开发者使用后无法编译。特此我们将xbear依赖的编译由fis3切换为fis2。xbear后续升级全部已fis作为基础升级。如对你的项目造成影响，深表歉意。
+
 ## 关于xBear
 
 * xbear使用fis为基础，作为xStack（http://develop.xpluse.com/xstack）和xCord（http://develop.xpluse.com/xcode）全栈开发框架默认编译和发布工具。
