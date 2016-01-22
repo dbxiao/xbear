@@ -36,7 +36,10 @@
 
 
 ## 更新日志
-	[xbear-1.0.23](2016-01-20)
+	[xbear-1.0.23](2016-01-22)【测试版】
+	1、修复<widget 和<layout 缺少inline标签问题。增加fis-parser-less到1.0.3
+
+	[xbear-1.0.23](2016-01-20)【测试版】
 	1、增加namespace和product全局变量，增加<widget 和<layout 标签
 
 	[xbear-1.0.20](2015-12-07)【测试版】
