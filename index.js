@@ -25,9 +25,10 @@ fis.cli.version = function() {
         '',
         '////////////////////////////////////////////'.bold.red,
         '/////              xBear               /////'.bold.yellow,
-        '/////         全栈代码管理工具         /////'.bold.green,
-        '///// http://develop.xpluse.com/xbear  /////'.bold.yellow,
-        '////////////////////////////////////////////'.bold.red,
+        '/////         全栈代码管理工具         /////'.bold.white,
+        '/////       [dbxiao@foxmail.com]       /////'.bold.green,
+        '///// http://develop.xpluse.com/xbear  /////'.bold.blue,
+        '////////////////////////////////////////////'.bold.pink,
         ''
     ].join('\n');
     console.log(content);
