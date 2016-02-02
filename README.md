@@ -6,7 +6,7 @@
 
 ## 关于xBear
 
-* xbear 使用fis为基础，作为xStack（http://develop.xpluse.com/xstack）和xCord（http://develop.xpluse.com/xcode）全栈开发框架默认编译和发布工具。
+* xbear 使用fis为基础，作为xStack（http://develop.xpluse.com/xstack）和 xCord（http://develop.xpluse.com/xcode）全栈开发框架默认编译和发布工具。
 * xbear 支持模板文件和静态文件编译、打包、发布，默认支持less转css、静态文件时间戳。
 * xbear 完全开源，你可以免费使用xBear作为自己项目的编译和开发工具。
 
@@ -26,15 +26,14 @@
 
 * [命令集合]  xbear release -{wcopd} {local,cordova}
 
-* [命令解释]  w：watch, 文件修改监控，当文件有修改时，触发命令
-              c：clean, 缓存清除，当执行release时，强制清空缓存文件
-              o：optimizer, 文件压缩，当执行reelase，对静态文件进行压缩
-              p：pack，打包，当执行release时，根据配置将多个文件进行打包合并
+* [命令解释]  w：watch, 文件修改监控，当文件有修改时，触发命令;
+              c：clean, 缓存清除，当执行release时，强制清空缓存文件;
+              o：optimizer, 文件压缩，当执行reelase，对静态文件进行压缩;
+              p：pack，打包，当执行release时，根据配置将多个文件进行打包合并;
+              local: xbear默认配置本地目录（x-output目录），编译文件将直接编译到x-output目录中;
+              cordova：当使用xCord移动框架时，编译文件将直接编译到x-output\cordova\www目录中。
 
-              local: xbear默认配置本地目录（x-output目录），编译文件将直接编译到x-output目录中
-              cordova：当使用xCord移动框架时，编译文件将直接编译到x-output\cordova\www目录中
-
-* [demo]      xbear release -wcopd local,cordova //将文件压缩合并编译到x-ouput目录和cordova目录 
+* [demo] xbear release -wcopd local,cordova //将文件压缩合并编译到x-ouput目录和cordova目录 
 
 ## xBear wiki
 
