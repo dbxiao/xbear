@@ -7,20 +7,31 @@
 'use strict';
 
 var xbear = module.exports = require("fis");
-var defaultConfig = require('./config/default.js');
-var autoFolders   = require('./lib/autoFolders.js');
+var $defaultConfig = require('./config/default.js');
+var $snippets   = require('xbear-snippets');
 
 //commander object
 xbear.cli.commander = null;
 xbear.cli.name          = 'xbear';
 xbear.require.prefixes  = ['xbear', 'fis'];
-xbear.cli.help.commands = ['release', 'server'];
 xbear.cli.info          = xbear.util.readJSON(__dirname + '/package.json');
+xbear.cli.help.commands = ['release', 'install', 'server', 'widget', 'page'];
 
 // @overide [重构 kernel/lib/compile]
 xbear.compile = require('./lib/compile.js');
 // @overide [默认配置]
-xbear.config.merge(defaultConfig);
+xbear.config.merge($defaultConfig);
+
+function hasArgv(argv, search){
+    var pos = argv.indexOf(search);
+    var ret = false;
+    while(pos > -1){
+        argv.splice(pos, 1);
+        pos = argv.indexOf(search);
+        ret = true;
+    }
+    return ret;
+}
 
 xbear.cli.version = function() {
     var v = xbear.cli.info.version;
@@ -37,4 +48,45 @@ xbear.cli.version = function() {
         ''
     ].join('\n');
     console.log(content);
+};
+
+//run cli tools
+xbear.cli.run = function(argv){
+
+    xbear.processCWD = process.cwd();
+
+    if(hasArgv(argv, '--no-color')){
+        xbear.cli.colors.mode = 'none';
+    }
+
+    var first = argv[2];
+
+    // console.log("::::::"+JSON.stringify(argv));
+
+    if(argv.length < 3 || first === '-h' ||  first === '--help'){
+        xbear.cli.help();
+    } else if(first === '-v' || first === '--version'){
+        xbear.cli.version();
+    } else if(first[0] === '-'){
+        xbear.cli.help();
+    } else if(first === 'widget' || first === "page"){
+        var autoData = {
+            snippetsType   : argv[2],
+            snippetsAction : argv[3],
+            snippetsName   : argv[4]
+        };
+        $snippets(autoData);
+    } else {
+        //register command
+        var commander = xbear.cli.commander = require('commander');
+        var cmd = xbear.require('command', argv[2]);
+
+        cmd.register(
+            commander
+                .command(cmd.name || first)
+                .usage(cmd.usage)
+                .description(cmd.desc)
+        );
+        commander.parse(argv);
+    }
 };

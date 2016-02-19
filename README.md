@@ -1,9 +1,5 @@
 # xBear
 
-## 致歉：
-
-* 在2016年1月初，xbear发布1.1.*版本，依赖fis由fis直接升级到fis3，导致部分开发者使用后无法编译。特此我们将xbear依赖的由fis3切换为fis。xbear后续升级全部已fis作为基础进行增量升级，如升级为fis3，xbear将重新建立新的仓库管理。如对你的项目造成影响，深表歉意。
-
 ## 关于xBear
 
 * xbear 使用fis为基础，作为xStack（http://develop.xpluse.com/xstack）和 xCord（http://develop.xpluse.com/xcode）全栈开发框架默认编译和发布工具。
@@ -33,6 +29,9 @@
               local: xbear默认配置本地目录（x-output目录），编译文件将直接编译到x-output目录中;
               cordova：当使用xCord移动框架时，编译文件将直接编译到x-output\cordova\www目录中。
 
+* [快捷命令]  widget：add {demo}，在widget目录新增demo目录和对应html、js、css文件。
+			  page：  add {demo}，在page目录新增demo目录和对应html、js、css文件。
+
 * [demo] xbear release -wcopd local,cordova //将文件压缩合并编译到x-ouput目录和cordova目录 
 
 ## xBear wiki
@@ -41,6 +40,16 @@
 
 
 ## 更新日志
+	[xbear-1.0.28](2016-02-19)【测试版】
+	1、增加widget自动新建命令。
+      xbear widget add widget-demo
+    widget目录下将新建widget-demo目录和相关html、js、css等静态文件。提升开发者效率。
+
+    2、增加page自动新建命令。
+      xbear page add page-demo
+    widget目录下将新建page-demo目录和相关html、js、css等静态文件。提升开发者效率。
+
+
 	[xbear-1.0.26](2016-01-25)【测试版】
 	1、添加fis-postpackager-simple和fis-postpackager-autoload依赖，解决pack报错问题
 	
