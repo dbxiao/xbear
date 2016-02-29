@@ -40,6 +40,9 @@
 
 
 ## 更新日志
+	[xbear-1.0.29](2016-02-29)【测试版】
+	1、新增ES6编译支持
+
 	[xbear-1.0.28](2016-02-19)【测试版】
 	1、增加widget自动新建命令。
       xbear widget add widget-demo

@@ -8,11 +8,15 @@ var time = [now.getFullYear(), now.getMonth()+1, now.getDate(), now.getHours() ,
 module.exports = {
     project: {
         md5Length: 8,
-        md5Connector: '.'
+        md5Connector: '.',
+        fileType : {
+            text : 'es'
+        }
     },
     modules : {
         parser : {
-            css : ["less"]
+            css : ["less"],
+            es  : "babel-5.x"
         },
         postpackager : "simple"
     },
@@ -34,9 +38,18 @@ module.exports = {
                     except: "exports, module, require, define"
                 }
             }
+        },
+        parser : {
+            "babel-5.x" : {
+                blacklist: ['regenerator'],
+                stage: 3
+            }
         }
     },
     roadmap:{
+        ext : {
+            es : "js"
+        },
         path:[
             /*** 模板编译规则（将所有html文件发布到view目录）*/
             {
