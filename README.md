@@ -40,6 +40,9 @@
 
 
 ## 更新日志
+	[xbear-1.0.30](2016-02-29)【测试版】
+	1、使用babel-5.x版本，添加默认支持ES6编译模块;
+
 	[xbear-1.0.28](2016-02-19)【测试版】
 	1、增加widget自动新建命令。
       xbear widget add widget-demo

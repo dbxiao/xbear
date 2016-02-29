@@ -8,11 +8,15 @@ var time = [now.getFullYear(), now.getMonth()+1, now.getDate(), now.getHours() ,
 module.exports = {
     project: {
         md5Length: 8,
-        md5Connector: '.'
+        md5Connector: '.',
+        fileType : {
+            text : "es"
+        }
     },
     modules : {
         parser : {
-            css : ["less"]
+            css : ["less"],
+            es  : "js"
         },
         postpackager : "simple"
     },
@@ -23,7 +27,7 @@ module.exports = {
             }
         },
         optimizer : {
-            'png-compressor' : {
+            "png-compressor" : {
                 type : 'pngquant',
                 speed : 2,
                 quality : [80, 100],
@@ -33,6 +37,14 @@ module.exports = {
                 mangle: {
                     except: "exports, module, require, define"
                 }
+            }
+        },
+        parser : {
+            "babel-5.x" : {
+                blacklist : ['regenerator'],
+                optional  : ['asyncToGenerator'],
+                sourceMaps: true,
+                stage     : 3
             }
         }
     },
@@ -77,6 +89,9 @@ module.exports = {
                 release: '/res/${product}/${namespace}$&',
                 query : "?t="+time
             }
-        ]
+        ],
+        ext : {
+            es : "js"
+        }
     }
 };

@@ -6,19 +6,20 @@
 
 'use strict';
 
-var xbear = module.exports = require("fis");
+var xbear          = module.exports = require("fis");
 var $defaultConfig = require('./config/default.js');
-var $snippets   = require('xbear-snippets');
+var $snippets      = require('xbear-snippets');
 
 //commander object
 xbear.cli.commander = null;
 xbear.cli.name          = 'xbear';
 xbear.require.prefixes  = ['xbear', 'fis'];
 xbear.cli.info          = xbear.util.readJSON(__dirname + '/package.json');
-xbear.cli.help.commands = ['release', 'install', 'server', 'widget', 'page'];
+xbear.cli.help.commands = ['release', 'install', 'server'];
 
 // @overide [重构 kernel/lib/compile]
 xbear.compile = require('./lib/compile.js');
+
 // @overide [默认配置]
 xbear.config.merge($defaultConfig);
 
@@ -60,8 +61,6 @@ xbear.cli.run = function(argv){
     }
 
     var first = argv[2];
-
-    // console.log("::::::"+JSON.stringify(argv));
 
     if(argv.length < 3 || first === '-h' ||  first === '--help'){
         xbear.cli.help();
