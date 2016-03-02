@@ -10,13 +10,14 @@ module.exports = {
         md5Length: 8,
         md5Connector: '.',
         fileType : {
-            text : 'es'
+            text : 'js'
         }
     },
     modules : {
         parser : {
             css : ["less"],
-            es  : "babel-5.x"
+            es  : "babel-5.x",
+            js  : "babel-5.x"
         },
         postpackager : "simple"
     },
