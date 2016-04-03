@@ -26,9 +26,11 @@
         "fis": "1.9.20",
         "commander": "1.3.2",
         "xbear-snippets": "^0.0.x",
-        "fis-parser-babel-5.x": "1.3.0",
+        "fis-parser-react" : "0.0.2",
         "fis-parser-less": "0.1.3",
+        "fis-parser-babel-5.x": "1.3.0",
         "fis-postpackager-simple": "0.0.26",
-        "fis-postpackager-autoload": "0.1.1"
+        "fis-postpackager-autoload": "0.1.1",
+        "fis-postprocessor-require-async" : "0.0.9"
     }
 }
