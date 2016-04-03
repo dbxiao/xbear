@@ -1,5 +1,9 @@
 /**
- * xbear配置文件，请勿修改，路由问题，请联系：dbxiao@foxmail.com
+ * @author [dbxiao]
+ * @data   [2015-03-02]
+ * @desc   [xbear配置文件，请勿修改，路由问题，请联系：dbxiao@foxmail.com] 
+ * @updata [2016-04-01 增加react支持
+ *          2016-02-28 增加ES6支持]
  */
 
 var now = new Date();
@@ -10,7 +14,7 @@ module.exports = {
         md5Length: 8,
         md5Connector: '.',
         fileType : {
-            text : 'js'
+            text : 'js,jsx'
         }
     },
     modules : {
@@ -46,12 +50,22 @@ module.exports = {
                 optional  : ['asyncToGenerator'],
                 sourceMaps: true,
                 stage     : 3
+            },
+            "jsx" : "react"
+        }
+    },
+    merge : {
+        modules : {
+            postprocessor: {
+                js: 'require-async',
+                tpl: 'require-async'
             }
         }
     },
     roadmap:{
         ext : {
-            es : "js"
+            es : "js",
+            jsx : "js"
         },
         path:[
             /*** 模板编译规则（将所有html文件发布到view目录）*/
@@ -93,9 +107,6 @@ module.exports = {
                 release: '/res/${product}/${namespace}$&',
                 query : "?t="+time
             }
-        ],
-        ext : {
-            es : "js"
-        }
+        ]
     }
 };
