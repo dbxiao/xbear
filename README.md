@@ -26,12 +26,13 @@
     xbear release -{wcopd} {local,cordova}
     ```
 
-* [命令解释]  w：watch, 文件修改监控，当文件有修改时，触发命令;
-              c：clean, 缓存清除，当执行release时，强制清空缓存文件;
-              o：optimizer, 文件压缩，当执行reelase，对静态文件进行压缩;
-              p：pack，打包，当执行release时，根据配置将多个文件进行打包合并;
-              local: xbear默认配置本地目录（x-output目录），编译文件将直接编译到x-output目录中;
-              cordova：当使用xCord移动框架时，编译文件将直接编译到x-output\cordova\www目录中。
+* [命令解释]
+    w：watch, 文件修改监控，当文件有修改时，触发命令;
+    c：clean, 缓存清除，当执行release时，强制清空缓存文件;
+    o：optimizer, 文件压缩，当执行reelase，对静态文件进行压缩;
+    p：pack，打包，当执行release时，根据配置将多个文件进行打包合并;
+    local: xbear默认配置本地目录（x-output目录），编译文件将直接编译到x-output目录中;
+    cordova：当使用xCord移动框架时，编译文件将直接编译到x-output\cordova\www目录中。
 
 * [扩展命令]  
     ```shell
