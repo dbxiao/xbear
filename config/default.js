@@ -1,7 +1,7 @@
 /**
  * @author [dbxiao]
  * @data   [2015-03-02]
- * @desc   [xbear配置文件，请勿修改，路由问题，请联系：dbxiao@foxmail.com] 
+ * @desc   [xbear配置文件，请勿修改，路由问题，请联系：dbxiao@foxmail.com]
  * @updata [2016-04-01 增加react支持
  *          2016-02-28 增加ES6支持]
  */
@@ -21,7 +21,8 @@ module.exports = {
         parser : {
             css : ["less"],
             es  : "babel-5.x",
-            js  : "babel-5.x"
+            js  : "babel-5.x",
+            md  : "marked"
         },
         postpackager : "simple"
     },
@@ -38,7 +39,7 @@ module.exports = {
                 quality : [80, 100],
                 iebug : false
             },
-            "uglify-js" : { 
+            "uglify-js" : {
                 mangle: {
                     except: "exports, module, require, define"
                 }
@@ -65,7 +66,8 @@ module.exports = {
     roadmap:{
         ext : {
             es : "js",
-            jsx : "js"
+            jsx : "js",
+            html: "html"
         },
         path:[
             /*** 模板编译规则（将所有html文件发布到view目录）*/

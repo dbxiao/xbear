@@ -13,14 +13,18 @@
 * 编译过程中，所有模板文件（html）自动发布到x-output/view目录，静态文件发布到x-output/res目录。
 * xbear自动关联补全静态url。
 
+
 ## 开始xBear
 
-* 安装：npm install -g xbear
-* 版本：xbear -v
+* 安装：``npm install -g xbear``
+* 版本：``xbear -v``
 
 ## xBear常用命令
 
-* [命令集合]  xbear release -{wcopd} {local,cordova}
+* [命令集合]  
+    ```shell
+    xbear release -{wcopd} {local,cordova}
+    ```
 
 * [命令解释]  w：watch, 文件修改监控，当文件有修改时，触发命令;
               c：clean, 缓存清除，当执行release时，强制清空缓存文件;
@@ -29,10 +33,11 @@
               local: xbear默认配置本地目录（x-output目录），编译文件将直接编译到x-output目录中;
               cordova：当使用xCord移动框架时，编译文件将直接编译到x-output\cordova\www目录中。
 
-* [快捷命令]  widget：add {demo}，在widget目录新增demo目录和对应html、js、css文件。
-			  page：  add {demo}，在page目录新增demo目录和对应html、js、css文件。
-
-* [demo] xbear release -wcopd local,cordova //将文件压缩合并编译到x-ouput目录和cordova目录 
+* [扩展命令]  
+    ```shell
+    xbear widget add {demo} //在widget目录新增demo目录和对应html、js、css文件。
+    xbear page add {demo} //在page目录新增demo目录和对应html、js、css文件。
+    ```
 
 ## xBear wiki
 
@@ -40,22 +45,27 @@
 
 
 ## 更新日志
+    [xbear-1.1.0](2016-03-02)【稳定版】
+    1、增加markdown支持
+    2、ES6稳定版编译
+    3、支持react预编译
+
 	[xbear-1.0.30](2016-03-02)【测试版】
 	1、新增ES6编译支持，开发者可以直接使用ES6规范进行项目开发，class、super、extend等黑科技终于在js中大放光彩
 
 	[xbear-1.0.28](2016-02-19)【测试版】
 	1、增加widget自动新建命令。
       xbear widget add widget-demo
-    widget目录下将新建widget-demo目录和相关html、js、css等静态文件。提升开发者效率。
+      widget目录下将新建widget-demo目录和相关html、js、css等静态文件。提升开发者效率。
 
     2、增加page自动新建命令。
       xbear page add page-demo
-    widget目录下将新建page-demo目录和相关html、js、css等静态文件。提升开发者效率。
+      widget目录下将新建page-demo目录和相关html、js、css等静态文件。提升开发者效率。
 
 
 	[xbear-1.0.26](2016-01-25)【测试版】
 	1、添加fis-postpackager-simple和fis-postpackager-autoload依赖，解决pack报错问题
-	
+
 	[xbear-1.0.25](2016-01-22)【测试版】
 	1、修复<widget 和<layout 缺少inline标签问题。增加fis-parser-less到1.0.3
 
