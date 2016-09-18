@@ -1,12 +1,12 @@
 {
     "name": "xbear",
-    "version": "1.0.31",
+    "version": "1.0.32",
     "description": "Web full stack development and management tool",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "bin": {
+    "bin": { 
         "xbear": "bin/xbear"
     },
     "repository": {

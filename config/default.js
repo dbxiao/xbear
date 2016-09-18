@@ -5,26 +5,34 @@
  * @updata [2016-04-01 增加react支持
  *          2016-02-28 增加ES6支持]
  */
-
+ 
 var now = new Date();
 var time = [now.getFullYear(), now.getMonth()+1, now.getDate(), now.getHours() , now.getMinutes(), now.getSeconds()].join("");
 
 module.exports = {
-    project: {
+    // 项目配置
+    project: { 
         md5Length: 8,
         md5Connector: '.',
         fileType : {
             text : 'js,jsx'
         }
     },
+
+    // 插件配置
     modules : {
         parser : {
             css : ["less"],
+            js  : "react",
+            jsx : "react",
             es  : "babel-5.x",
             js  : "babel-5.x"
+            
         },
         postpackager : "simple"
     },
+
+    // 插件运行配置
     settings : {
         postprocessor : {
             jswrapper : {
@@ -38,22 +46,25 @@ module.exports = {
                 quality : [80, 100],
                 iebug : false
             },
-            "uglify-js" : { 
+            "uglify-js" : {
                 mangle: {
                     except: "exports, module, require, define"
                 }
             }
         },
         parser : {
+            "jsx"  : "react",
+            "js"   : "react",
             "babel-5.x" : {
                 blacklist : ['regenerator'],
                 optional  : ['asyncToGenerator'],
                 sourceMaps: true,
                 stage     : 3
-            },
-            "jsx" : "react"
+            }
         }
     },
+
+    // 编译配置
     merge : {
         modules : {
             postprocessor: {
@@ -62,6 +73,8 @@ module.exports = {
             }
         }
     },
+
+    // 目录规范与域名配置
     roadmap:{
         ext : {
             es : "js",
@@ -77,7 +90,7 @@ module.exports = {
             },
             /*** 静态文件编译规则（将page、layout、widget静态文件发布到res目录）*/
             {
-                reg : /^\/(page|layout|widget)\/(.*\.(js|css))$/i,
+                reg : /^\/(page|layout|widget)\/(.*\.(js|jsx|css))$/i,
                 isMod : true,
                 release : '/res/${product}/${namespace}/$1/$2',
                 id : '$1/$2',
@@ -85,7 +98,7 @@ module.exports = {
             },
             /*** 静态文件编译规则（单独将static静态文件发布到res目录）*/
             {
-                reg : /^\/(static)\/(.*\.(js|css))$/i,
+                reg : /^\/(static)\/(.*\.(js|jsx|css))$/i,
                 isMod : false,
                 release : '/res/${product}/${namespace}/$1/$2',
                 id : '$1/$2',

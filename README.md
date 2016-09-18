@@ -32,7 +32,7 @@
 * [快捷命令]  widget：add {demo}，在widget目录新增demo目录和对应html、js、css文件。
 			  page：  add {demo}，在page目录新增demo目录和对应html、js、css文件。
 
-* [demo] xbear release -wcopd local,cordova //将文件压缩合并编译到x-ouput目录和cordova目录 
+* [demo] xbear release -wcopd local,cordova //将文件压缩合并编译到x-ouput目录和cordova目录
 
 ## xBear wiki
 
@@ -40,6 +40,8 @@
 
 
 ## 更新日志
+
+
 	[xbear-1.0.30](2016-03-02)【测试版】
 	1、新增ES6编译支持，开发者可以直接使用ES6规范进行项目开发，class、super、extend等黑科技终于在js中大放光彩
 
@@ -55,7 +57,7 @@
 
 	[xbear-1.0.26](2016-01-25)【测试版】
 	1、添加fis-postpackager-simple和fis-postpackager-autoload依赖，解决pack报错问题
-	
+
 	[xbear-1.0.25](2016-01-22)【测试版】
 	1、修复<widget 和<layout 缺少inline标签问题。增加fis-parser-less到1.0.3
 
