@@ -72,7 +72,7 @@ module.exports = {
         path:[
             /*** 模板编译规则（将所有html文件发布到view目录）*/
             {
-                reg : /^\/(page|layout|widget)\/(.+\.html)$/i,
+                reg : /^\/(page|layout|widget)\/(.+\.(html|md))$/i,
                 isMod : true,
                 release : '/view/${product}/${namespace}/$1/$2',
                 id : '$1/$2'
@@ -95,7 +95,7 @@ module.exports = {
             },
             /*** page和widget doc目录下的ue设计图、mrd不需要编译产出 */
             {
-                reg : /^\/(page|widget)\/.*\/doc\/[^\.]*\.(psd|png|jpg|doc|md)/i,
+                reg : /^\/(page|widget)\/.*\/doc\/[^\.]*\.(psd|png|jpg|gif|jpeg|doc)/i,
                 release : false
             },
             /*** 将剩余static文件发布到res目录 */
