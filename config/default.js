@@ -67,7 +67,7 @@ module.exports = {
         ext : {
             es : "js",
             jsx : "js",
-            md  : "html"
+            md  : "htm"
         },
         path:[
             /*** 模板编译规则（将所有html文件发布到view目录）*/
