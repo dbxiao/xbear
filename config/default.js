@@ -67,12 +67,12 @@ module.exports = {
         ext : {
             es : "js",
             jsx : "js",
-            md  : "htm"
+            md  : "html"
         },
         path:[
             /*** 模板编译规则（将所有html文件发布到view目录）*/
             {
-                reg : /^\/(page|layout|widget)\/(.+\.(html|md))$/i,
+                reg : /^\/(page|layout|widget)\/(.+\.(html|htm|md))$/i,
                 isMod : true,
                 release : '/view/${product}/${namespace}/$1/$2',
                 id : '$1/$2'
