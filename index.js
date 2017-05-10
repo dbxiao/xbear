@@ -8,7 +8,6 @@
 
 var xbear          = module.exports = require("fis");
 var $defaultConfig = require('./config/default.js');
-var $snippets      = require('xbear-snippets');
 
 //commander object
 xbear.cli.commander = null;
@@ -53,7 +52,6 @@ xbear.cli.version = function() {
 
 //run cli tools
 xbear.cli.run = function(argv){
-
     xbear.processCWD = process.cwd();
 
     if(hasArgv(argv, '--no-color')){
@@ -62,30 +60,36 @@ xbear.cli.run = function(argv){
 
     var first = argv[2];
 
+
     if(argv.length < 3 || first === '-h' ||  first === '--help'){
         xbear.cli.help();
     } else if(first === '-v' || first === '--version'){
         xbear.cli.version();
     } else if(first[0] === '-'){
         xbear.cli.help();
-    } else if(first === 'widget' || first === "page"){
-        var autoData = {
-            snippetsType   : argv[2],
-            snippetsAction : argv[3],
-            snippetsName   : argv[4]
-        };
-        $snippets(autoData);
     } else {
-        //register command
-        var commander = xbear.cli.commander = require('commander');
-        var cmd = xbear.require('command', argv[2]);
+        try{
+            var name = argv[2]; // 插件名称
+            var xcmd = require('xbear-'+name);
+        }catch(e){
+            console.log("ERROR:");
+            console.log("Cannot find module 'xbear-"+name+"', please check!");
+        }
+        
 
-        cmd.register(
-            commander
-                .command(cmd.name || first)
-                .usage(cmd.usage)
-                .description(cmd.desc)
-        );
-        commander.parse(argv);
+        if(xcmd){
+            xcmd(argv);
+        }else{
+            var commander = xbear.cli.commander = require('commander');
+            var cmd = xbear.require('command', argv[2]);
+
+            cmd.register(
+                commander
+                    .command(cmd.name || first)
+                    .usage(cmd.usage)
+                    .description(cmd.desc)
+            );
+            commander.parse(argv);
+        }
     }
 };

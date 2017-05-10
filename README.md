@@ -46,6 +46,11 @@
 
 
 ## 更新日志
+    [xbear-1.2.6](2017-05-07)【测试版】
+    1、增加自动加载xbear-{command}插件，开发者可以在安装xbear的环境中，直接安装xbear-{command}插件，使用xbear {command} {action} … 自动运行。
+    2、去掉xbear-snippets依赖。需要xbear-snippets按需安装。
+
+
     [xbear-1.2.5](2016-09-29)【测试版】
     1、修复编译<layout 和 <widget 便签问题
     2、marked支持直接编译成html
